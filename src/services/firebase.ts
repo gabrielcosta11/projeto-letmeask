@@ -1,7 +1,7 @@
 import {initializeApp} from 'firebase/app';
 import * as db from 'firebase/database'
 import * as Auth from 'firebase/auth';
-import {getDatabase} from 'firebase/database'
+import { Database } from '@firebase/database';
 
 
 
@@ -19,7 +19,6 @@ const firebaseApp = initializeApp(
 
 const auth = Auth
 const database = db
-const teste = getDatabase(firebaseApp)
 
 
 

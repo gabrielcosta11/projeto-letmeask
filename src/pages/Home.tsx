@@ -10,6 +10,7 @@ import { Button } from "../components/Button";
 import '../styles/auth.scss'
 import { FormEvent, useState } from 'react';
 import { database } from '../services/firebase';
+import { Reference } from '../utilities/Reference';
 
 
 function Home() {
@@ -33,7 +34,7 @@ function Home() {
             return
         }
 
-        const roomRef = await database.ref(database.getDatabase(), `rooms/${roomCode}`)
+        const roomRef = await Reference(`rooms/${roomCode}`)
         const roomRefExists = (await database.get(roomRef)).exists()
         
         if (!roomRefExists) {

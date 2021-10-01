@@ -10,6 +10,7 @@ import { Button } from "../components/Button";
 import '../styles/auth.scss'
 import { useAuth } from "../hooks/useAuth";
 import { database } from "../services/firebase";
+import { Reference } from "../utilities/Reference";
 
 function NewRoom() {
     const {user} = useAuth()
@@ -23,7 +24,7 @@ function NewRoom() {
             return
         }
 
-        const roomRef = database.ref(database.getDatabase(), 'rooms')
+        const roomRef = await Reference('rooms')
 
         const firebaseRoom = await database.push(roomRef, {
             title: newRoom,
