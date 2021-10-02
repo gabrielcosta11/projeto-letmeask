@@ -11,6 +11,7 @@ import '../styles/auth.scss'
 import { FormEvent, useState } from 'react';
 import { database } from '../services/firebase';
 import { Reference } from '../utilities/Reference';
+import { child } from '@firebase/database';
 
 
 function Home() {
@@ -34,11 +35,19 @@ function Home() {
             return
         }
 
-        const roomRef = await Reference(`rooms/${roomCode}`)
+        const roomRef = Reference(`rooms/${roomCode}`)
         const roomRefExists = (await database.get(roomRef)).exists()
         
         if (!roomRefExists) {
             alert('Room does not exists')
+            return
+        }
+
+        const endedAtExists = (await database.get(child(roomRef, "endedAt"))).exists()
+        console.log(endedAtExists)
+
+        if(endedAtExists) {
+            alert('Room alredy closed.')
             return
         }
 

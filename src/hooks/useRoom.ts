@@ -1,3 +1,4 @@
+import { stringify } from "querystring"
 import { useEffect, useState } from "react"
 import { database } from "../services/firebase"
 import { Reference } from "../utilities/Reference"
@@ -13,7 +14,7 @@ type QuestionType = {
     isAnswerd: boolean,
     isHighlighted: boolean,
     likeCount: number,
-    hasLiked: boolean
+    likeId: string | undefined
 }
 
 type FirebaseQuestions = Record<string, {
@@ -38,7 +39,9 @@ function useRoom(roomId: string) {
         const roomRef = Reference(`rooms/${roomId}`)
 
         database.onValue(roomRef, room => {
-            const firebaseQuestions: FirebaseQuestions = room.val().questions ?? {}
+            const databaseRoom = room.val()
+            const firebaseQuestions: FirebaseQuestions = databaseRoom.questions ?? {};
+
 
             const parseQuestions = Object.entries(firebaseQuestions).map(([key, value]) => {
                 return {
@@ -48,10 +51,10 @@ function useRoom(roomId: string) {
                     isHighlighted: value.isHighlighted,
                     isAnswerd: value.isAnswerd,
                     likeCount: Object.values(value.likes ?? {}).length,
-                    hasLiked: Object.values(value.likes ?? {}).some(like => like.athorId === user?.id)
+                    likeId: Object.keys(value.likes ?? {})[0],
                 }
             })
-            setTitle(room.val().title)
+            setTitle(databaseRoom.title)
             setQuestions(parseQuestions)
         })
 
