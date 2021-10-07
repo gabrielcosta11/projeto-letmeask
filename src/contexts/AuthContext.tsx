@@ -45,6 +45,8 @@ function AuthContextProvider(props: AuthContextProviderProps) {
     }, [])
 
     async function singInWithGoogle() {
+        console.log('chegou!')
+
         const provider = new auth.GoogleAuthProvider();
 
         const result = await auth.signInWithPopup(auth.getAuth(), provider)
@@ -62,6 +64,7 @@ function AuthContextProvider(props: AuthContextProviderProps) {
                 avatar: photoURL
             })
         }
+        console.log('final')
     }
 
 
