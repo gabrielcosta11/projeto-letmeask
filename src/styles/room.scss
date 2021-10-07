@@ -1,3 +1,7 @@
+html {
+    font-size: 62.5%;
+}
+
 #page-room {
     header {
         padding: 24px;
@@ -10,6 +14,9 @@
             justify-content: space-between;
             align-items: center;
 
+            grid-gap: 20px;
+            flex-wrap: wrap;
+
             > img {
                 max-height: 45px;
             }
@@ -17,7 +24,9 @@
             div {
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 gap: 8px;
+                flex-wrap: wrap;
 
                 > Button {
                     height: 40px;
@@ -28,6 +37,7 @@
 
     main {
         max-width: 800px;
+        width: 90%;
         margin: 0 auto 12px auto;
 
         .room-title {
@@ -37,7 +47,7 @@
 
             h1 {
                 font-family: 'Poppins', sans-serif;
-                font-size: 24px;
+                font-size: 2.4rem;
                 color: #29292e
             }
 
@@ -48,7 +58,8 @@
                 padding: 8px 16px;
                 color: #fff;
                 font-weight: 500;
-                font-size: 14;
+                font-size: 1.4rem;
+                white-space: nowrap;
             }
         }
 
@@ -63,6 +74,7 @@
                 box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
                 resize: vertical;
                 min-height: 130px;
+                font-size: 1.6rem;
             }
 
             .form-footer {
@@ -72,7 +84,7 @@
                 margin-top: 16px;
 
                 span {
-                    font-size: 14px;
+                    font-size: 1.4rem;
                     color: #737380;
                     font-weight: 500;
 
@@ -80,7 +92,7 @@
                         background: transparent;
                         border: none;
                         text-decoration: underline;
-                        font-size: 14px;
+                        font-size: 1.4rem;
                         font-weight: 500;
                         cursor: pointer;
                     }
@@ -100,7 +112,7 @@
                         margin-left: 8px;
                         color: #29292e;
                         font-weight: 500;
-                        font-size: 14px;
+                        font-size: 1.4rem;
                     }
                 }
             }
@@ -109,5 +121,17 @@
         .list-questions {
             margin-top: 32px;
         }
+    }
+}
+
+@media (max-width: 620px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media (max-width: 580px) {
+    #page-room > header > .content > img {
+        height: 29px;
     }
 }
