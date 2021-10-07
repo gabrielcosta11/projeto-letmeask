@@ -18,7 +18,7 @@ type RoomParams = {
 }
 
 function Room() {
-    const { user } = useAuth()
+    const { user, singInWithGoogle } = useAuth()
     const params = useParams<RoomParams>()
     const roomId = params.id
     const [newQuestion, setNewQuestion] = useState('')
@@ -98,7 +98,7 @@ function Room() {
                             </div>
                         ) : (
                             <span>
-                                Para enviar uma pergunta, <button>faça o seu login</button>.
+                                Para enviar uma pergunta, <button onClick={singInWithGoogle}>faça o seu login</button>.
                             </span>
                         )}
                         <Button type="submit" disabled={!user}>Enviar pergunta</Button>
