@@ -3,7 +3,7 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "dist/gabrielcosta11/projeto-letmeask",
+    "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
