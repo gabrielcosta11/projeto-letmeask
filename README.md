@@ -15,3 +15,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [React](https://reactjs.org)
 - [Firebase](https://firebase.google.com/)
 - [TypeScript](https://www.typescriptlang.org/)
+
+## 💻 Projeto
+
+Letmeask é uma aplicação criada durante a 6ª edição NLW da Rocketseat.<br>
+Ela tem como objetivo facilitar a interação do criador de conteúdo como os comentários de sua Live.
