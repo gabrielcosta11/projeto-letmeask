@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">
-    <img alt="Letmeask" src="src\assets\images\tela.svg" />
+    <img alt="Letmeask" src="src\assets\images\tela.PNG" />
 </h1>
 
 <br>
