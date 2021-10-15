@@ -18,5 +18,10 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-Letmeask é uma aplicação criada durante a 6ª edição NLW da Rocketseat.<br>
-Ela tem como objetivo facilitar a interação do criador de conteúdo como os comentários de sua Live.
+Letmeask é uma aplicação desenvolvida durante a 6ª edição NLW da Rocketseat.<br>
+Ela tem como objetivo facilitar a interação do criador de conteúdo como os comentários de sua Live.<br>
+Acesse o [site](https://letmeask-6b010.web.app/)
+
+## 📝 License
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
